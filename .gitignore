@@ -1,0 +1,8 @@
+.DS_Store
+
+/node_modules
+/design
+/build
+/source/css
+
+style-guide.md
