@@ -1,8 +1,16 @@
 body {
+  box-sizing: border-box;
+  min-width: 360px;
   margin: 0;
   padding: 0;
 
-  box-sizing: border-box;
+
+  font-family: 'Rubik', Arial, sans-serif;
+  font-size: 1.125rem;
+  color: $dark-blue;
+  line-height: 1.5;
+
+  background-color: hsl(0, 0%, 100%);
 }
 
 *,
@@ -22,3 +30,6 @@ body {
 	overflow: hidden;
 }
 
+a {
+  text-decoration: none;
+}
