@@ -14,6 +14,7 @@
     "grunt-browser-sync": "^2.2.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-sass": "^3.0.2",
+    "grunt-svgstore": "^2.0.0",
     "jit-grunt": "^0.10.0",
     "node-sass": "^4.12.0",
     "standard": "^13.1.0"

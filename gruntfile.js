@@ -32,7 +32,21 @@ module.exports = function (grunt) {
           browser: 'firefox'
         }
       }
-    }
+    },
+    svgstore: {
+      options: {
+        formatting: {
+          indent_size: 2
+        },
+        inheritviewbox: true,
+        includeTitleElement: false
+      },
+      default: {
+        files: {
+          'source/img/inline/sprite.svg': ['source/img/inline/*.svg'],
+        },
+      },
+    },
   });
 
   grunt.registerTask('server', ['sass', 'browserSync', 'watch']);
