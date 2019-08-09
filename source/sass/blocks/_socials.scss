@@ -23,7 +23,11 @@
   display: block;
   fill: $white;
 
+<<<<<<< HEAD
   transition: fill 100ms ease-out;
+=======
+  transition: fill 50ms linear;
+>>>>>>> 1a1e1e47221fc0af9550ffe91f84e5a2183be19c
 }
 
 .socials__link:active .socials__icon,
