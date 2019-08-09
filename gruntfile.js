@@ -39,11 +39,12 @@ module.exports = function (grunt) {
           indent_size: 2
         },
         inheritviewbox: true,
-        includeTitleElement: false
+        includeTitleElement: false,
+        cleanup: ['fill', 'fill-rule']
       },
       default: {
         files: {
-          'source/img/inline/sprite.svg': ['source/img/inline/*.svg'],
+          'source/img/sprite.svg': ['source/img/inline/*.svg'],
         },
       },
     },
