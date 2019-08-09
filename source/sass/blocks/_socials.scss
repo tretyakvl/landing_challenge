@@ -1,0 +1,32 @@
+.socials {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+.socials__item + .socials__item {
+  margin-left: 2.5rem;
+}
+
+.socials__link {
+  display: block;
+  text-decoration: none;
+}
+
+.socials__icon {
+  display: block;
+  fill: $white;
+
+  transition: fill 50ms linear;
+}
+
+.socials__link:active .socials__icon,
+.socials__link:hover .socials__icon {
+  fill: $soft-red;
+}
