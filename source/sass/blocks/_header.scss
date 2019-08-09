@@ -23,11 +23,23 @@
   display: none;
 }
 
-.header__list { }
-.header__link { }
-.button { }
+.header__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-.header.nav-opened .header__logo {
+.header__link {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 400;
+}
+
+.header--opened .header__logo {
+  position: relative;
+  z-index: 11;
+
   & path,
     circle {
     fill: #ffffff;
@@ -36,4 +48,42 @@
   & .shield {
     fill: #313751;
   }
+}
+
+.header--opened .header__button {
+  position: relative;
+  z-index: 11;
+
+  background-image: url(../img/icon-close.svg)
+}
+
+.header--opened .header__menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+
+  display: block;
+  padding: 6.5rem 2rem 0;
+
+  color: $white;
+  text-align: center;
+
+  background-color: rgba($dark-blue, 0.9);
+}
+
+.header--opened .header__list li {
+  box-shadow: 0 0.1em rgba($grayish-blue, 0.3) inset;
+}
+
+.header--opened .header__list li:last-child {
+  box-shadow: 0 -0.1em rgba(145, 148, 161, 0.3) inset,
+              0 0.1em rgba($grayish-blue, 0.3) inset;
+}
+
+.header--opened .header__link {
+  font-size: 1.45rem;
+  line-height: 2.9;
 }
