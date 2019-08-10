@@ -79,11 +79,12 @@
 }
 
 .header--opened .header__list li:last-child {
-  box-shadow: 0 -0.1em rgba(145, 148, 161, 0.3) inset,
+  box-shadow: 0 -0.1em rgba($grayish-blue, 0.3) inset,
               0 0.1em rgba($grayish-blue, 0.3) inset;
 }
 
 .header--opened .header__link {
+  display: block;
   font-size: 1.45rem;
   line-height: 2.9;
 }

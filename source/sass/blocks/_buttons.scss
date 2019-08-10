@@ -1,0 +1,22 @@
+.button {
+  display: inline-block;
+  padding: 0 1.5rem;
+
+  color: $white;
+  font-size: 0.95rem;
+  line-height: 3.2;
+  text-decoration: none;
+
+  border: none;
+  border-radius: 5px;
+  background-color: $soft-blue;
+  box-shadow: 0 5px 10px rgba($grayish-blue, 0.2);
+}
+
+.button--wide {
+  display: block;
+}
+
+.button--red {
+  background-color: $soft-red;
+}
