@@ -20,3 +20,13 @@
 .button--red {
   background-color: $soft-red;
 }
+
+@media (min-width: 1440px) {
+  .button {
+    padding: 0 2.02rem;
+
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    line-height: 2.8;
+  }
+}
