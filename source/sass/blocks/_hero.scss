@@ -1,0 +1,47 @@
+.hero {
+  position: relative;
+
+  background: url(../img/illustration-hero.svg) 50% 35px/353px 248px no-repeat;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    top: 90px;
+    right: 0;
+    z-index: -1;
+
+    width: 80%;
+    height: 205px;
+
+    background-color: $soft-blue;
+    border-top-left-radius: 93px;
+    border-bottom-left-radius: 93px;
+  }
+}
+
+.hero__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20rem 2rem 2.5rem 2rem;
+}
+
+.hero__header {
+  margin-bottom: 1rem;
+}
+
+.hero__text {
+  margin-top: 0;
+  margin-bottom: 2rem;
+}
+
+.hero__container {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media(min-width: 750px) {
+  .hero__content {
+    padding: 2.9rem 2.8rem 2.9rem 3.2rem;
+  }
+}
