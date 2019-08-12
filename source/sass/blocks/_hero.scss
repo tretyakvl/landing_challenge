@@ -1,7 +1,7 @@
 .hero {
   position: relative;
 
-  background: url(../img/illustration-hero.svg) 50% 35px/353px 248px no-repeat;
+  background: url(../img/illustration-hero.svg) 50% 35px/350px no-repeat;
 
   &::before {
     content: '';
@@ -39,12 +39,28 @@
 .hero__container {
   display: flex;
   justify-content: space-between;
+  width: 310px;
+  margin: 0 auto;
 }
 
 @media(min-width: 750px) {
   .hero {
+    background-size: 500px;
+
+    &::before {
+      height: 300px;
+    }
+  }
+
+  .hero__content {
+    padding-top: 24rem;
+  }
+}
+
+@media(min-width: 1300px) {
+  .hero {
     background-position: 89% 60px;
-    background-size: 655px 460px;
+    background-size: 655px;
 
 
     &::before {
@@ -77,5 +93,6 @@
 
   .hero__container {
     width: 345px;
+    margin: 0;
   }
 }
