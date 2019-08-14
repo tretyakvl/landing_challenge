@@ -92,7 +92,7 @@
     content: '';
 
     position: absolute;
-    right: 35%;
+    right: 30%;
     bottom: 10px;
     left: 0;
     z-index: -1;
@@ -102,8 +102,8 @@
 
     background-color: $soft-blue;
 
-    border-top-right-radius: 100px;
-    border-bottom-right-radius: 100px;
+    border-top-right-radius: 200px;
+    border-bottom-right-radius: 200px;
   }
 }
 
@@ -160,6 +160,7 @@
     max-width: 540px;
 
     &::after {
+      right: 26%;
       bottom: -10px;
     }
   }
