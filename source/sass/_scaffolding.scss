@@ -31,6 +31,11 @@ body {
 	overflow: hidden;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 h1 {
   color: $dark-blue;
   font-size: 2rem;
