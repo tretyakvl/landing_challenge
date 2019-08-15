@@ -7,25 +7,33 @@ button.addEventListener('click', () => {
   header.classList.toggle('header--opened')
 })
 
-const featuresButtons = document.querySelectorAll('.features__button')
-const featuresItems = document.querySelectorAll('.features__feature')
-const BUTTON_ACTIVE = 'features__button--active'
-const ITEM_SHOWN = 'features__feature--shown'
+const faqButtons = document.querySelectorAll('.faq__question')
+const faqContent = document.querySelectorAll('.faq__answer')
 
-for (const button of featuresButtons) {
-  button.addEventListener('click', featuresHandler)
+function addLogic (buttons, content) {
+  const BUTTON_CLASS = 'is-active'
+  const CONTENT_CLASS = 'is-shown'
+
+  for (const button of buttons) {
+    button.addEventListener('click', handler)
+  }
+
+  function handler (event) {
+    event.preventDefault()
+
+    buttons.forEach((button, i) => {
+      if (button === event.currentTarget && button.classList.contains(BUTTON_CLASS)) {
+        button.classList.remove(BUTTON_CLASS)
+        content[i].classList.remove(CONTENT_CLASS)
+      } else if (button === event.currentTarget) {
+        button.classList.add(BUTTON_CLASS)
+        content[i].classList.add(CONTENT_CLASS)
+      } else {
+        button.classList.remove(BUTTON_CLASS)
+        content[i].classList.remove(CONTENT_CLASS)
+      }
+    })
+  }
 }
 
-function featuresHandler (event) {
-  event.preventDefault()
-
-  featuresButtons.forEach((button, i) => {
-    if (event.currentTarget === button) {
-      button.classList.add(BUTTON_ACTIVE)
-      featuresItems[i].classList.add(ITEM_SHOWN)
-    } else {
-      button.classList.remove(BUTTON_ACTIVE)
-      featuresItems[i].classList.remove(ITEM_SHOWN)
-    }
-  })
-}
+addLogic(faqButtons, faqContent)
