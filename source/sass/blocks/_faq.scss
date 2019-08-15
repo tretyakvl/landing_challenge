@@ -67,7 +67,7 @@
   border-bottom: 1px solid rgba($grayish-blue, 0.3);
   overflow: hidden;
 
-  transition: height 100ms linear;
+  transition: height 400ms ease-out;
 }
 
 .faq__answer p {
@@ -83,10 +83,6 @@
 
 .faq__answer:last-child {
   margin-bottom: 0;
-}
-
-.faq__answer.is-shown {
-  height: auto;
 }
 
 .faq .button {

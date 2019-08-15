@@ -1,39 +1,40 @@
-'use strict'
+'use strict';
 
-const header = document.querySelector('.header')
-const button = header.querySelector('.header__button')
+(() => {
+  const header = document.querySelector('.header')
+  const button = header.querySelector('.header__button')
 
-button.addEventListener('click', () => {
-  header.classList.toggle('header--opened')
-})
+  button.addEventListener('click', () => {
+    header.classList.toggle('header--opened')
+  })
+})();
 
-const faqButtons = document.querySelectorAll('.faq__question')
-const faqContent = document.querySelectorAll('.faq__answer')
+(() => {
+  const faqButtons = document.querySelectorAll('.faq__question')
+  const faqContent = document.querySelectorAll('.faq__answer')
 
-function addLogic (buttons, content) {
   const BUTTON_CLASS = 'is-active'
-  const CONTENT_CLASS = 'is-shown'
 
-  for (const button of buttons) {
+  for (const button of faqButtons) {
     button.addEventListener('click', handler)
   }
 
   function handler (event) {
     event.preventDefault()
 
-    buttons.forEach((button, i) => {
+    faqButtons.forEach((button, i) => {
+      const contentHeight = faqContent[i].scrollHeight
+
       if (button === event.currentTarget && button.classList.contains(BUTTON_CLASS)) {
         button.classList.remove(BUTTON_CLASS)
-        content[i].classList.remove(CONTENT_CLASS)
+        faqContent[i].style.setProperty('height', '1px')
       } else if (button === event.currentTarget) {
         button.classList.add(BUTTON_CLASS)
-        content[i].classList.add(CONTENT_CLASS)
+        faqContent[i].style.setProperty('height', contentHeight + 'px')
       } else {
         button.classList.remove(BUTTON_CLASS)
-        content[i].classList.remove(CONTENT_CLASS)
+        faqContent[i].style.setProperty('height', '1px')
       }
     })
   }
-}
-
-addLogic(faqButtons, faqContent)
+})()
