@@ -30,10 +30,48 @@
   margin: 0 auto;
 }
 
+.contacts__form.is-error .contacts__container {
+  &::after {
+    content: "!";
+
+    position: absolute;
+    top: 13px;
+    right: 16px;
+    z-index: 0;
+
+    width: 20px;
+    height: 20px;
+
+    color: $white;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+
+    background-color: $soft-red;
+    border-radius: 50%;
+  }
+}
+.contacts__form.is-error .contacts__email {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-shadow: 0 0 0 3px $soft-red inset;
+}
+
+.contacts__form.is-error .contacts__error {
+  height: auto;
+}
+
+.contacts__container {
+  position: relative;
+  margin-bottom: 1rem;
+
+  border-radius: 5px;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+
 .contacts__email {
   display: block;
   width: 100%;
-  margin-bottom: 1rem;
   padding: 0 1.2rem;
 
   color: $dark-blue;
@@ -42,7 +80,6 @@
 
   border: none;
   border-radius: 5px;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 
   &::placeholder {
     color: $grayish-blue;
@@ -50,6 +87,23 @@
     font-size: 400;
     letter-spacing: 0.06em;
   }
+}
+
+.contacts__error {
+  display: block;
+  height: 0;
+  padding: 0 0.7rem;
+  overflow: hidden;
+
+  color: $white;
+  font-size: 0.7rem;
+  font-style: italic;
+  line-height: 1.8;
+  text-align: left;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: $soft-red;
 }
 
 .contacts__form .button {
@@ -84,7 +138,7 @@
     justify-content: space-between;
   }
 
-  .contacts__email {
+  .contacts__container {
     max-width: 300px;
     margin-bottom: 0;
   }
