@@ -18,11 +18,16 @@
 }
 
 .contacts__header {
-  margin-top: 0;
-  margin-bottom: 2.1rem;
+  max-width: 500px;
+  margin: 0 auto 2.1rem;
 
   color: $white;
   line-height: 1.1;
+}
+
+.contacts__form {
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .contacts__email {
@@ -53,4 +58,38 @@
 
   background-color: $soft-red;
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+}
+
+@media(min-width: 750px) {
+  .contacts {
+    padding-top: 4.2rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .contacts__stats {
+    margin-bottom: 2.1rem;
+
+    letter-spacing: 0.3em;
+  }
+
+  .contacts__header {
+    margin-bottom: 2.5rem;
+
+    line-height: 1.2;
+  }
+
+  .contacts__form {
+    display: flex;
+
+    justify-content: space-between;
+  }
+
+  .contacts__email {
+    max-width: 300px;
+    margin-bottom: 0;
+  }
+
+  .contacts__form .button {
+    width: auto;
+  }
 }
