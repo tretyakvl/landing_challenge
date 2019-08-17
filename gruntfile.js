@@ -48,6 +48,13 @@ module.exports = function (grunt) {
         },
       },
     },
+    browserify: {
+      default: {
+        files: {
+          'source/js/output.js': 'source/js/main.js'
+        }
+      }
+    }
   });
 
   grunt.registerTask('server', ['sass', 'browserSync', 'watch']);
