@@ -9,7 +9,9 @@ const hide = function (content) {
 buttons.forEach((button, i) => {
   button.addEventListener('click', event => {
     const content = contentList[i]
-    if (content.style.height !== '0px') {
+    if (button.classList.contains('is-active')) {
+      event.stopImmediatePropagation()
+      button.classList.remove('is-active')
       hide(content)
     }
   })
