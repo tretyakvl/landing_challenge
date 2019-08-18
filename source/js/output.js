@@ -3,8 +3,26 @@
 require('./modules/header')
 require('./modules/features')
 require('./modules/faq')
+require('./modules/contacts')
 
-},{"./modules/faq":2,"./modules/features":3,"./modules/header":4}],2:[function(require,module,exports){
+},{"./modules/contacts":2,"./modules/faq":3,"./modules/features":4,"./modules/header":5}],2:[function(require,module,exports){
+
+const form = document.querySelector('.contacts__form')
+const input = form.querySelector('.contacts__email')
+const ERROR_CLASS = 'is-error'
+const regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
+
+input.addEventListener('blur', event => {
+  const email = input.value
+
+  if (!regex.test(email)) {
+    form.classList.add(ERROR_CLASS)
+  } else {
+    form.classList.remove(ERROR_CLASS)
+  }
+})
+
+},{}],3:[function(require,module,exports){
 const activateButtons = require('./helpers/activateButtons')
 const buttons = document.querySelectorAll('.faq__question')
 const contentList = document.querySelectorAll('.faq__answer')
@@ -26,7 +44,7 @@ buttons.forEach((button, i) => {
 
 activateButtons(buttons, contentList, show, hide)
 
-},{"./helpers/activateButtons":5,"./helpers/setHeight":6}],3:[function(require,module,exports){
+},{"./helpers/activateButtons":6,"./helpers/setHeight":7}],4:[function(require,module,exports){
 const activateButtons = require('./helpers/activateButtons')
 const buttons = document.querySelectorAll('.features__button')
 const contentList = document.querySelectorAll('.features__feature')
@@ -39,7 +57,7 @@ const hide = function (content) {
 
 activateButtons(buttons, contentList, show, hide)
 
-},{"./helpers/activateButtons":5}],4:[function(require,module,exports){
+},{"./helpers/activateButtons":6}],5:[function(require,module,exports){
 const header = document.querySelector('.header')
 const button = header.querySelector('.header__button')
 
@@ -47,7 +65,7 @@ button.addEventListener('click', () => {
   header.classList.toggle('header--opened')
 })
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 /**
  *
  * @param {NodeList} buttons
@@ -79,7 +97,7 @@ module.exports = function activateButtons (buttons, contentList, showAction, hid
   }
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 /**
  *
  * @param {HTMLElement} elem
