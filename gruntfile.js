@@ -4,8 +4,14 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     watch: {
-      files: ['source/sass/**/*.scss'],
-      tasks: ['sass']
+      sass: {
+        files: ['source/sass/**/*.scss'],
+        tasks: ['sass']
+      },
+      browserify: {
+        files: ['source/js/main.js', 'source/js/modules/**/*.js'],
+        tasks: ['browserify']
+      }
     },
     sass: {
       options: {
