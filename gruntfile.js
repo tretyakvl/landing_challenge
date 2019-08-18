@@ -63,5 +63,5 @@ module.exports = function (grunt) {
     }
   });
 
-  grunt.registerTask('server', ['sass', 'browserSync', 'watch']);
+  grunt.registerTask('server', ['sass', 'browserify', 'browserSync', 'watch']);
 };
