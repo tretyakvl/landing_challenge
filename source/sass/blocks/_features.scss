@@ -59,7 +59,7 @@
   }
 }
 
-.features__button--active {
+.features__button.is-active {
   color: $dark-blue;
 
   &::after {
@@ -148,7 +148,7 @@
     line-height: 5;
   }
 
-  .features__button--active {
+  .features__button.is-active {
     &::after {
       width: 100%;
     }

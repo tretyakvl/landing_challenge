@@ -1,3 +1,4 @@
 'use strict'
-require('./modules/header-toggle')
-require('./modules/faq-logic')
+require('./modules/header')
+require('./modules/features')
+require('./modules/faq')
