@@ -6,23 +6,33 @@ require('./modules/faq')
 require('./modules/contacts')
 
 },{"./modules/contacts":2,"./modules/faq":3,"./modules/features":4,"./modules/header":5}],2:[function(require,module,exports){
-
+const setHeight = require('./helpers/setHeight')
 const form = document.querySelector('.contacts__form')
 const input = form.querySelector('.contacts__email')
+const massage = form.querySelector('.contacts__error')
 const ERROR_CLASS = 'is-error'
 const regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/
 
 input.addEventListener('blur', event => {
-  const email = input.value
-
-  if (!regex.test(email)) {
-    form.classList.add(ERROR_CLASS)
-  } else {
-    form.classList.remove(ERROR_CLASS)
-  }
+  checkForm(input.value)
 })
 
-},{}],3:[function(require,module,exports){
+form.addEventListener('submit', event => {
+  event.preventDefault()
+  checkForm(input.value)
+})
+
+function checkForm (data) {
+  if (!regex.test(data)) {
+    form.classList.add(ERROR_CLASS)
+    setHeight(massage)
+  } else {
+    form.classList.remove(ERROR_CLASS)
+    massage.style.setProperty('height', '0px')
+  }
+}
+
+},{"./helpers/setHeight":7}],3:[function(require,module,exports){
 const activateButtons = require('./helpers/activateButtons')
 const buttons = document.querySelectorAll('.faq__question')
 const contentList = document.querySelectorAll('.faq__answer')
