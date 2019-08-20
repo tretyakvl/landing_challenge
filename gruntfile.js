@@ -58,6 +58,11 @@ module.exports = function (grunt) {
       default: {
         files: {
           'source/js/output.js': 'source/js/main.js'
+        },
+        options: {
+          plugin: [
+            'tinyify'
+          ]
         }
       }
     }

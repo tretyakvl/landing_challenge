@@ -18,7 +18,8 @@
     "grunt-svgstore": "^2.0.0",
     "jit-grunt": "^0.10.0",
     "node-sass": "^4.12.0",
-    "standard": "^13.1.0"
+    "standard": "^13.1.0",
+    "tinyify": "^2.5.1"
   },
   "standard": {
     "env": "browser",
