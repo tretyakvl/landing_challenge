@@ -1,5 +1,5 @@
 .features {
-  padding: 5.5rem 2rem;
+  padding: 6rem 2rem;
 }
 
 .features__header {
@@ -44,6 +44,8 @@
 
   cursor: pointer;
 
+  transition: color 100ms ease-out;
+
   &::after {
     content: '';
 
@@ -56,6 +58,17 @@
 
     background-color: $soft-red;
     transform: translateX(50%);
+    transition: all 200ms ease-out;
+  }
+}
+
+.features__button:hover {
+  color: $dark-blue;
+
+  &::after {
+    width: 143px;
+
+    background-color: rgba($soft-red, 0.2);
   }
 }
 
@@ -64,6 +77,12 @@
 
   &::after {
     width: 143px;
+  }
+}
+
+.features__button:hover.is-active {
+  &::after {
+    background-color: $soft-red;
   }
 }
 
@@ -79,6 +98,17 @@
   display: none;
   flex-direction: column;
   align-items: center;
+
+  animation: slide 300ms ease-out forwards;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-2.5rem);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .features__illustration {
@@ -126,7 +156,7 @@
 
   .features__text {
     max-width: 530px;
-    margin: 0 auto 2.8rem;
+    margin: 0 auto 2.6rem;
   }
 
   .features__buttons {
@@ -146,6 +176,12 @@
 
   .features__button {
     line-height: 5;
+  }
+
+  .features__button:hover {
+    &::after {
+      width: 100%;
+    }
   }
 
   .features__button.is-active {
@@ -171,12 +207,15 @@
 
   .features__feature .features__header {
     margin-top: 0;
+    margin-bottom: 1.2rem;
+
     text-align: left;
   }
 
   .features__feature .features__text {
-    margin-bottom: 2.3rem;
+    margin-bottom: 2.1rem;
     text-align: left;
+    line-height: 1.5;
   }
 
   .features__feature .button {
@@ -186,7 +225,7 @@
 
   .features__container {
     flex: 0 0 440px;
-    margin-top: -5rem;
+    margin-top: -4.8rem;
     margin-left: 2rem;
   }
 }

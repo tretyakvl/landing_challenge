@@ -1,5 +1,5 @@
 .downloads {
-  padding: 1.5rem 2rem;
+  padding: 0.6rem 2rem;
 }
 
 .downloads__container {
@@ -57,9 +57,10 @@
   font-size: 1.3rem;
 }
 
-.downloads__item p {
+.downloads__version {
+  display: block;
   margin-top: 0;
-  margin-bottom: 3.7rem;
+  margin-bottom: 3.9rem;
 }
 
 .downloads__item .button {
@@ -69,11 +70,11 @@
 
 @media(min-width: 750px) {
   .downloads {
-    padding-top: 4.3rem;
+    padding-top: 3.8rem;
   }
 
   .downloads__container {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3.7rem;
   }
 
   .downloads__header {
