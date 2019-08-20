@@ -65,8 +65,24 @@ module.exports = function (grunt) {
           ]
         }
       }
+    },
+    clean: {
+      build: ['build/*']
+    },
+    copy: {
+      build: {
+        files: [
+          {
+            expand: true,
+            cwd: 'source/',
+            src: ['css/**', 'img/**', 'js/output.js', '*.html'],
+            dest: 'build/'
+          }
+        ]
+      }
     }
   });
 
   grunt.registerTask('server', ['sass', 'browserify', 'browserSync', 'watch']);
+  grunt.registerTask('build', ['sass', 'browserify', 'clean', 'copy']);
 };
