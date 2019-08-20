@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@lodder/grunt-postcss": "^1.0.9",
+    "autoprefixer": "^9.6.1",
+    "cssnano": "^4.1.10",
     "grunt": "^1.0.4",
     "grunt-browser-sync": "^2.2.0",
     "grunt-browserify": "^5.3.0",
@@ -29,5 +32,8 @@
       "package.json",
       "gruntfile.js"
     ]
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

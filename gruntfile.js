@@ -1,6 +1,8 @@
 module.exports = function (grunt) {
   const sass = require('node-sass');
-  require('jit-grunt')(grunt);
+  require('jit-grunt')(grunt, {
+    postcss: '@lodder/grunt-postcss'
+  });
 
   grunt.initConfig({
     watch: {
@@ -80,9 +82,21 @@ module.exports = function (grunt) {
           }
         ]
       }
+    },
+    postcss: {
+      options: {
+        map: false,
+        processors: [
+          require('autoprefixer')(),
+          require('cssnano')()
+        ]
+      },
+      dist: {
+        src: 'build/css/*.css'
+      }
     }
   });
 
   grunt.registerTask('server', ['sass', 'browserify', 'browserSync', 'watch']);
-  grunt.registerTask('build', ['sass', 'browserify', 'clean', 'copy']);
+  grunt.registerTask('build', ['sass', 'browserify', 'clean', 'copy', 'postcss']);
 };
