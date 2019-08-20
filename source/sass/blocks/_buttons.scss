@@ -8,23 +8,38 @@
   text-decoration: none;
   white-space: nowrap;
 
-  border: none;
+  border: 2px solid $soft-blue;
   border-radius: 5px;
   background-color: $soft-blue;
   box-shadow: 0 5px 10px rgba($grayish-blue, 0.2);
-}
 
-.button--wide {
-  display: block;
+  transition: all 100ms ease-out;
+
+  &:active {
+    color: $soft-blue;
+    background-color: hsl(0, 0, 100%);
+  }
 }
 
 .button--red {
+  border-color: $soft-red;
   background-color: $soft-red;
+
+  &:active {
+    color: $soft-red;
+  }
 }
 
 .button--white {
-  background-color: hsl(0, 0, 97%);
   color: $dark-blue;
+
+  border-color: hsl(0, 0, 97%);
+  background-color: hsl(0, 0, 97%);
+
+  &:active {
+    color: $dark-blue;
+    border-color: $dark-blue;
+  }
 }
 
 @media (min-width: 1440px) {
