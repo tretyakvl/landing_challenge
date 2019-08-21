@@ -43,9 +43,6 @@ module.exports = function (grunt) {
     },
     svgstore: {
       options: {
-        formatting: {
-          indent_size: 2
-        },
         inheritviewbox: true,
         includeTitleElement: false,
         cleanup: ['fill', 'fill-rule']
@@ -77,7 +74,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: 'source/',
-            src: ['css/**', 'img/**', 'js/output.js', '*.html'],
+            src: ['css/**', 'img/*.*', 'js/output.js', '**/*.html'],
             dest: 'build/'
           }
         ]
@@ -94,9 +91,33 @@ module.exports = function (grunt) {
       dist: {
         src: 'build/css/*.css'
       }
+    },
+    svgmin: {
+      link: {
+        files: [
+          {
+            expand: true,
+            cwd: 'build/img',
+            src: ['*.svg', '!sprite.svg'],
+            dest: 'build/img'
+          }
+        ]
+      },
+      inline: {
+        files: {
+          'build/img/sprite.svg': 'build/img/sprite.svg'
+        },
+        options: {
+          plugins: [
+            {
+              cleanupIDs: false
+            }
+          ]
+        }
+      }
     }
   });
 
   grunt.registerTask('server', ['sass', 'browserify', 'browserSync', 'watch']);
-  grunt.registerTask('build', ['sass', 'browserify', 'clean', 'copy', 'postcss']);
+  grunt.registerTask('build', ['sass', 'browserify', 'clean', 'copy', 'postcss', 'svgmin']);
 };
